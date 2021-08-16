@@ -1,4 +1,5 @@
 import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/routes.dart';
 import 'package:e_commerce/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
             bodyText1: TextStyle(color: kTextColor),
             bodyText2: TextStyle(color: kTextColor),
           )),
-      home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
