@@ -1,1 +1,3 @@
 # OnlineShopApp
+
+メインプログラムは master ブランチにあります。
