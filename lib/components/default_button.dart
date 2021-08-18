@@ -1,12 +1,13 @@
-import 'package:e_commerce/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
 
 class DefaultButton extends StatelessWidget {
-  const DefaultButton({Key? key, required this.text}) : super(key: key);
+  const DefaultButton({Key? key, required this.text, required this.press})
+      : super(key: key);
   final String text;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class DefaultButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               elevation: 16),
           onPressed: () {
-            Navigator.pushNamed(context, SignInScreen.routeName);
+            press();
           },
           child: Text(
             text,
