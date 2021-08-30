@@ -1,6 +1,7 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/screens/complete_profile/complete_profile_screen.dart';
 import 'package:e_commerce/screens/sign_in/components/custom_suffix_icon.dart';
 import 'package:e_commerce/size_config.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,9 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(
               text: "Continue",
               press: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+                }
               })
         ],
       ),
@@ -57,7 +60,7 @@ class _SignUpFormState extends State<SignUpForm> {
         validator: (value) {
           if (value!.isEmpty) {
             return "";
-          } else if (password != confirm_password) {
+          } else if (password != value) {
             setState(() {
               errors.add(kMatchPassError);
             });
