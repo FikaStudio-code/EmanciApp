@@ -14,13 +14,14 @@ class NoAccountText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("Don't have an account?",
-            style: TextStyle(fontSize: getProportionateScreenWidth(16))),
+        Text("アカウントを登録していますか？",
+            style: TextStyle(fontSize: getProportionateScreenWidth(10))),
         GestureDetector(
           onTap: () => {Navigator.pushNamed(context, SignUpScreen.routeName)},
-          child: Text("Sign Up",
+          child: Text("新規ユーザを登録する",
               style: TextStyle(
-                  fontSize: getProportionateScreenWidth(16),
+                  fontSize: getProportionateScreenWidth(10),
+                  decoration: TextDecoration.underline,
                   color: kPrimaryColor)),
         ),
       ],

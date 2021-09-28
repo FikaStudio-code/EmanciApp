@@ -19,13 +19,12 @@ class Body extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: SizeConfig.screenHeight * 0.04),
-              Text("Welcome Back",
+              Text("ログイン",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: getProportionateScreenWidth(28),
                       fontWeight: FontWeight.bold)),
-              Text(
-                  "Sign in with your email and password\nor continue with social media",
+              Text("登録した Email アドレスとパスワード\nもしくは SNS アカウントでログインできます",
                   textAlign: TextAlign.center),
               SizedBox(height: SizeConfig.screenHeight * 0.08),
               SignForm(),

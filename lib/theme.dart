@@ -33,11 +33,11 @@ TextTheme textTheme() {
 AppBarTheme appBarTheme() {
   return AppBarTheme(
     centerTitle: true,
-    color: Colors.white,
-    elevation: 0,
+    color: Color(0xFFCAF5F5),
+    elevation: 5,
     brightness: Brightness.light,
-    iconTheme: IconThemeData(color: Colors.black),
+    iconTheme: IconThemeData(color: Color(0xFF2C3636)),
     textTheme:
-        TextTheme(headline6: TextStyle(color: Color(0xFF8B8B8B), fontSize: 18)),
+        TextTheme(headline6: TextStyle(color: Color(0xFF607575), fontSize: 18)),
   );
 }

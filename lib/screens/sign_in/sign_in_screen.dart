@@ -8,6 +8,6 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Sign In")), body: Body());
+    return Scaffold(appBar: AppBar(title: Text("Log In")), body: Body());
   }
 }

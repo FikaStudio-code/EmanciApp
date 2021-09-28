@@ -34,7 +34,7 @@ class _SignFormState extends State<SignForm> {
             buildEmailFormField(),
             SizedBox(height: getProportionateScreenHeight(30)),
             buildPasswordFormField(),
-            SizedBox(height: getProportionateScreenHeight(30)),
+            SizedBox(height: getProportionateScreenHeight(10)),
             Row(
               children: [
                 Checkbox(
@@ -49,20 +49,24 @@ class _SignFormState extends State<SignForm> {
                         }
                       });
                     }),
-                Text("Remember me"),
+                Text("パスワードを記憶する",
+                    style:
+                        TextStyle(fontSize: getProportionateScreenWidth(10))),
                 Spacer(),
                 GestureDetector(
                   onTap: () => Navigator.pushNamed(
                       context, ForgotPasswordScreen.routeName),
-                  child: Text("Forgot Password",
-                      style: TextStyle(decoration: TextDecoration.underline)),
+                  child: Text("パスワードを忘れた",
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontSize: getProportionateScreenWidth(10))),
                 )
               ],
             ),
             FormError(errors: errors),
             SizedBox(height: getProportionateScreenHeight(20)),
             DefaultButton(
-                text: "Continue",
+                text: "ログイン",
                 color: kPrimaryColor,
                 press: () async {
                   if (_formKey.currentState!.validate()) {
@@ -123,7 +127,8 @@ class _SignFormState extends State<SignForm> {
         },
         decoration: InputDecoration(
             labelText: "Password",
-            hintText: "Enter your password",
+            hintText: "パスワードを入力して下さい",
+            hintStyle: TextStyle(fontSize: getProportionateScreenWidth(12)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Lock.svg")));
   }
@@ -162,7 +167,8 @@ class _SignFormState extends State<SignForm> {
         },
         decoration: InputDecoration(
             labelText: "Email",
-            hintText: "Enter your email",
+            hintText: "Email アドレスを入力して下さい",
+            hintStyle: TextStyle(fontSize: getProportionateScreenWidth(12)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Mail.svg")));
   }
