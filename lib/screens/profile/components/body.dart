@@ -1,5 +1,6 @@
 import 'package:e_commerce/screens/profile/components/profile_menu.dart';
 import 'package:e_commerce/screens/profile/components/profile_pic.dart';
+import 'package:e_commerce/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -24,7 +25,11 @@ class Body extends StatelessWidget {
             icon: "assets/icons/Question mark.svg",
             press: () {}),
         ProfileMenu(
-            text: "Log Out", icon: "assets/icons/Log out.svg", press: () {}),
+            text: "Log Out",
+            icon: "assets/icons/Log out.svg",
+            press: () {
+              Navigator.pushNamed(context, SplashScreen.routeName);
+            }),
       ],
     );
   }

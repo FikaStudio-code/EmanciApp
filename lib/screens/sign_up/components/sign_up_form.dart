@@ -17,7 +17,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   late String email;
   late String password;
-  late String confirm_password;
+  late String confirmPassword;
   final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,9 @@ class _SignUpFormState extends State<SignUpForm> {
     return TextFormField(
         obscureText: true,
         keyboardType: TextInputType.emailAddress,
-        onSaved: (newValue) => confirm_password = newValue.toString(),
+        onSaved: (newValue) => confirmPassword = newValue.toString(),
         onChanged: (value) {
-          if (password == confirm_password) {
+          if (password == confirmPassword) {
             setState(() {
               errors.remove(kMatchPassError);
             });

@@ -2,7 +2,10 @@ import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/screens/forgot_password/forgot_password_screen.dart';
 import 'package:e_commerce/screens/login_success/login_success_screen.dart';
+import 'package:e_commerce/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -20,6 +23,7 @@ class _SignFormState extends State<SignForm> {
   final List<String> errors = [];
   late String email;
   late String password;
+  late Response res;
   bool remember = false;
   @override
   Widget build(BuildContext context) {
@@ -59,14 +63,30 @@ class _SignFormState extends State<SignForm> {
             SizedBox(height: getProportionateScreenHeight(20)),
             DefaultButton(
                 text: "Continue",
-                press: () {
+                press: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                    res = await postRequest(mail: email, pass: password);
+                    if (res.statusCode == 200) {
+                      Navigator.pushNamed(
+                          context, LoginSuccessScreen.routeName);
+                    } else if (res.statusCode != 200) {
+                      Navigator.pushNamed(context, SplashScreen.routeName);
+                    }
                   }
                 })
           ],
         ));
+  }
+
+  Future<Response> postRequest(
+      {required String mail, required String pass}) async {
+    {
+      Uri uri = Uri.http("118.27.23.90:8000", "test/login");
+      res =
+          await post(uri, body: json.encode({"email": mail, "password": pass}));
+      return Future<Response>.value(res);
+    }
   }
 
   TextFormField buildPasswordFormField() {

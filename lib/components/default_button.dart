@@ -19,7 +19,7 @@ class DefaultButton extends StatelessWidget {
               primary: kPrimaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              elevation: 16),
+              elevation: 5),
           onPressed: () {
             press();
           },
