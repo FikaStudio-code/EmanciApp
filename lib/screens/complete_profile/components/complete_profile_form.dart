@@ -37,6 +37,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             SizedBox(height: getProportionateScreenHeight(40)),
             DefaultButton(
                 text: "Continue",
+                color: kPrimaryColor,
                 press: () {
                   if (_formKey.currentState!.validate()) {
                     // Check data and go to Top Page

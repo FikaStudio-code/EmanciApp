@@ -34,6 +34,7 @@ class _SignUpFormState extends State<SignUpForm> {
           FormError(errors: errors),
           DefaultButton(
               text: "Continue",
+              color: kPrimaryColor,
               press: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.pushNamed(context, CompleteProfileScreen.routeName);

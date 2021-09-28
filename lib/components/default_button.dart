@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 import '../size_config.dart';
 
 class DefaultButton extends StatelessWidget {
-  const DefaultButton({Key? key, required this.text, required this.press})
+  const DefaultButton(
+      {Key? key, required this.text, required this.press, required this.color})
       : super(key: key);
   final String text;
   final Function press;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class DefaultButton extends StatelessWidget {
       height: getProportionateScreenHeight(56),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              primary: kPrimaryColor,
+              primary: color,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               elevation: 5),
@@ -26,7 +27,9 @@ class DefaultButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-                fontSize: getProportionateScreenWidth(18), color: Colors.white),
+                fontSize: getProportionateScreenWidth(18),
+                color: Colors.white,
+                fontWeight: FontWeight.bold),
           )),
     );
   }
