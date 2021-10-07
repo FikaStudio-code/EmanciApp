@@ -33,7 +33,7 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: getProportionateScreenHeight(40)),
           FormError(errors: errors),
           DefaultButton(
-              text: "Continue",
+              text: "登録",
               color: kPrimaryColor,
               press: () {
                 if (_formKey.currentState!.validate()) {
@@ -71,7 +71,8 @@ class _SignUpFormState extends State<SignUpForm> {
         },
         decoration: InputDecoration(
             labelText: "Confirm Password",
-            hintText: "Re-Enter your password",
+            hintText: "もう一度パスワードを入力して下さい",
+            hintStyle: TextStyle(fontSize: getProportionateScreenWidth(12)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Lock.svg")));
   }
@@ -110,7 +111,8 @@ class _SignUpFormState extends State<SignUpForm> {
         },
         decoration: InputDecoration(
             labelText: "Password",
-            hintText: "Enter your password",
+            hintText: "パスワードを入力して下さい",
+            hintStyle: TextStyle(fontSize: getProportionateScreenWidth(12)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Lock.svg")));
   }
@@ -149,7 +151,8 @@ class _SignUpFormState extends State<SignUpForm> {
         },
         decoration: InputDecoration(
             labelText: "Email",
-            hintText: "Enter your email",
+            hintText: "Email アドレスを入力してください",
+            hintStyle: TextStyle(fontSize: getProportionateScreenWidth(12)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Mail.svg")));
   }

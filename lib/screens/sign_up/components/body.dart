@@ -17,10 +17,10 @@ class Body extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: SizeConfig.screenHeight * 0.02),
-              Text("Register Account", style: headingStyle),
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Text("新規ユーザ登録", style: headingStyle),
               Text(
-                "Complete your details or continue \nwith social media",
+                "メールアドレスとパスワードを設定して \nアプリ用のアカウントを作成することができます。",
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: SizeConfig.screenHeight * 0.07),
@@ -35,8 +35,8 @@ class Body extends StatelessWidget {
                   SocialCard(icon: "assets/icons/twitter.svg", press: () {}),
                 ],
               ),
-              Text(
-                  "By continuing your confirm that you agree \nwith our Term and Condition",
+              SizedBox(height: SizeConfig.screenHeight * 0.07),
+              Text("続行することにより利用規約に\n同意することを確認してください",
                   textAlign: TextAlign.center)
             ],
           ),
