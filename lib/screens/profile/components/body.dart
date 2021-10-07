@@ -10,22 +10,19 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 40),
         ProfilePic(),
-        SizedBox(height: 20),
+        SizedBox(height: 40),
         ProfileMenu(
-            text: "My Account",
-            icon: "assets/icons/User Icon.svg",
-            press: () {}),
+            text: "マイプロフィール", icon: "assets/icons/User Icon.svg", press: () {}),
         ProfileMenu(
-            text: "Notifiication", icon: "assets/icons/Bell.svg", press: () {}),
+            text: "設定", icon: "assets/icons/Settings.svg", press: () {}),
         ProfileMenu(
-            text: "Settings", icon: "assets/icons/Settings.svg", press: () {}),
-        ProfileMenu(
-            text: "Help Center",
+            text: "ヘルプセンター",
             icon: "assets/icons/Question mark.svg",
             press: () {}),
         ProfileMenu(
-            text: "Log Out",
+            text: "ログアウト",
             icon: "assets/icons/Log out.svg",
             press: () {
               Navigator.pushNamed(context, SplashScreen.routeName);

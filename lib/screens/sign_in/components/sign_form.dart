@@ -1,8 +1,8 @@
 import 'package:e_commerce/components/default_button.dart';
 import 'package:e_commerce/components/form_error.dart';
 import 'package:e_commerce/screens/forgot_password/forgot_password_screen.dart';
+import 'package:e_commerce/screens/home/home_screen.dart';
 import 'package:e_commerce/screens/login_success/login_success_screen.dart';
-import 'package:e_commerce/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
@@ -76,7 +76,7 @@ class _SignFormState extends State<SignForm> {
                       Navigator.pushNamed(
                           context, LoginSuccessScreen.routeName);
                     } else if (res.statusCode != 200) {
-                      Navigator.pushNamed(context, SplashScreen.routeName);
+                      Navigator.pushNamed(context, HomeScreen.routeName);
                     }
                   }
                 })
