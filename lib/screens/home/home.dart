@@ -1,4 +1,5 @@
 import 'package:e_commerce/components/custom_bottom_nav_bar.dart';
+import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/enums.dart';
 import 'package:e_commerce/screens/counselor/counselor_screen.dart';
 import 'package:e_commerce/screens/home/home_screen.dart';
@@ -15,7 +16,7 @@ class Hoge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(body: Home());
+    return Home();
   }
 }
 
@@ -52,18 +53,18 @@ class _HomeState extends State<Home> {
         onTap: onTabTapped,
         currentIndex: currentIndex,
         items: [
+          BottomNavigationBarItem(icon: Icon(Icons.store), label: "ホーム"),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/Shop Icon.svg"),
-              label: "ホーム"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.edit_location_outlined), label: "キャリコン"),
+            icon: Icon(Icons.edit_location_outlined),
+            label: "キャリコン",
+          ),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet_outlined),
               label: "ウォレット"),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset("assets/icons/User Icon.svg"),
-              label: "アカウント"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "アカウント"),
         ],
+        unselectedItemColor: kSecondaryColor,
+        selectedItemColor: Color(0xFFF28202),
       ),
     );
   }

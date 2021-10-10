@@ -9,7 +9,11 @@ class WalletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.wallet),
-    );
+        body: Container(
+            child: Center(
+      child: Text("Wallet"),
+    ))
+        //bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.wallet),
+        );
   }
 }

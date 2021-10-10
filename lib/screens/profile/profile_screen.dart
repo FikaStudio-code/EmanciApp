@@ -12,9 +12,7 @@ class ProfileScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       body: Body(),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedMenu: MenuState.profile,
-      ),
+      //bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile,),
     );
   }
 }

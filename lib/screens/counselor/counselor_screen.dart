@@ -9,8 +9,12 @@ class CounselorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:
-          CustomBottomNavBar(selectedMenu: MenuState.counselor),
-    );
+        body: Container(
+      child: Center(
+        child: Text("Counselor"),
+      ),
+    )
+        //bottomNavigationBar:CustomBottomNavBar(selectedMenu: MenuState.counselor),
+        );
   }
 }
