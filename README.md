@@ -1,3 +1,3 @@
-# OnlineShopApp
+# EmanciApp
 
 メインプログラムは master ブランチにあります。
