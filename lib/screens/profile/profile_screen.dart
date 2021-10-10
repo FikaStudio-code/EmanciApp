@@ -11,7 +11,6 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(title: Text("Profile")),
       body: Body(),
       bottomNavigationBar: CustomBottomNavBar(
         selectedMenu: MenuState.profile,

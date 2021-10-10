@@ -1,13 +1,14 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/enums.dart';
+import 'package:e_commerce/screens/counselor/counselor_screen.dart';
 import 'package:e_commerce/screens/home/home_screen.dart';
 import 'package:e_commerce/screens/profile/profile_screen.dart';
+import 'package:e_commerce/screens/wallet/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
-  const CustomBottomNavBar({Key? key, required this.selectedMenu})
-      : super(key: key);
+  CustomBottomNavBar({Key? key, required this.selectedMenu}) : super(key: key);
 
   final MenuState selectedMenu;
 
@@ -43,18 +44,22 @@ class CustomBottomNavBar extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-            color: MenuState.favorite == selectedMenu
+            icon: Icon(Icons.edit_location_outlined),
+            color: MenuState.counselor == selectedMenu
                 ? kPrimaryColor
                 : inActiveIconColor,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, CounselorScreen.routeName);
+            },
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-            color: MenuState.message == selectedMenu
+            icon: Icon(Icons.account_balance_wallet_outlined),
+            color: MenuState.wallet == selectedMenu
                 ? kPrimaryColor
                 : inActiveIconColor,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, WalletScreen.routeName);
+            },
           ),
           IconButton(
             icon: SvgPicture.asset("assets/icons/User Icon.svg"),
